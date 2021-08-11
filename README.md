@@ -13,3 +13,5 @@ https://www.internationalgenome.org/data-portal/population/ASW
 https://www.biostars.org/p/302940/
 
 https://scikit-allel.readthedocs.io/en/stable/chunked.html#functions
+
+https://blog.goldenhelix.com/alternate-allele-frequency-vcf-file-format/
