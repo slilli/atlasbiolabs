@@ -15,3 +15,5 @@ https://www.biostars.org/p/302940/
 https://scikit-allel.readthedocs.io/en/stable/chunked.html#functions
 
 https://blog.goldenhelix.com/alternate-allele-frequency-vcf-file-format/
+
+https://pyvcf.readthedocs.io/en/v0.4.6/INTRO.html
