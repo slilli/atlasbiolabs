@@ -19,3 +19,5 @@ https://blog.goldenhelix.com/alternate-allele-frequency-vcf-file-format/
 https://pyvcf.readthedocs.io/en/v0.4.6/INTRO.html
 
 https://scikit-allel.readthedocs.io/en/stable/genindex.html
+
+https://stackoverflow.com/questions/5404665/accessing-elements-of-python-dictionary-by-index
