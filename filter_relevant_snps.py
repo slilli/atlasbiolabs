@@ -31,7 +31,7 @@ class Snps:
 
     def filter_snps(self):
     
-        print("Check for snps '{}'.format(value0), 'rs8176746', 'rs8176747':", self.boolean_array)
+        print("Check for snps 'rs8176719', 'rs8176746', 'rs8176747':", self.boolean_array)
     
     
         try:
