@@ -1,5 +1,11 @@
 import numpy as np
 
+'''
+@read_me:
+   - this script defines two dictionaries: ABO blood group permutattions and a dictionary for genotypes as well as two functions to access
+     those dictionaries
+'''
+
 
 def dictionary():
 
@@ -29,87 +35,58 @@ def dictionary():
     '22': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'not clear'},
     '23': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'not clear'},
     '24': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'Type A'},
-    '25': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'AB'},
+    '25': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type AB'},
     '26': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type B'}}
     
     
     return abo_bloodtype_dict
 
 
-def hash_abo_permutations(dict_obj, blood_gr, *rs_array):
+def hash_abo_permutations(dict_obj, blood_gr, rs_array0, rs_array1, rs_array2):
 
-    for k in (np.arange(0, len(rs_array[0]),1)):
+    for k in (np.arange(0, len(rs_array0),1)):
         for i in dict_obj:
-            if (rs_array[0][k] == dict_obj[i].get('snp1')) and (rs_array[1][k] == dict_obj[i].get('snp2')) and (rs_array[2][k] == dict_obj[i].get('snp3')) :
+            if (rs_array0[k] == dict_obj[i].get('snp1')) and (rs_array1[k] == dict_obj[i].get('snp2')) and (rs_array2[k] == dict_obj[i].get('snp3')) :
                 blood_gr.append(dict_obj[i].get('Blood Type'))
     
-    return blood_gr
-
-                
+    return blood_gr, rs_array0, rs_array1, rs_array2
 
 
+def is_het_or_hom_dict():
+
+    het_hom_dict = {
+    'hom_alt': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)'},
+    'hom_ref': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)'},
+    'het' : {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)'}}
+    
+    return het_hom_dict
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-datalists = dict()
-for item in ['size', 'type']:
-    datalists[item] = []
-
-
-def nested_dict_values_iterator(dict_obj):
-
-    # Iterate over all values of given dictionary
-    for value in dict_obj.values():
-        # Check if value is of dict type
-        if isinstance(value, dict):
-            # If value is dict then iterate over all its values
-            for v in  nested_dict_values_iterator(value):
-                #yield (value.get('Blood Type'))
-                print(1)
-                yield v
-        else:
-            # If value is not dict type then yield the value
-            print(2)
-            yield value
-
-   
-            
-            
-#Loop through all nested dictionary values
-for value in nested_dict_values_iterator(abo_bloodtype_dict):
-    print(value)
-   
-
-
-for d in abo_bloodtype_dict.values():
-    if (d['snp1'] == 'rs8176719(I;I)') and (d['snp2'] == 'rs8176746(A;A)') and (d['snp3'] =='rs8176747(C;C)'):
-        print("Yes")
-        break
-else:
-    print("No")
-'''
+def is_het_or_hom(het_hom_dict, num_gt_subset, len_gt_subset, gt_hom_alt, gt_hom_ref, gt_het, rs_array0, rs_array1, rs_array2):
+    
+    for i in num_gt_subset:
+        for k in len_gt_subset:
+            if (gt_hom_alt[i][k] == True):
+                if(i == 0):            
+                    rs_array0.append(het_hom_dict['hom_alt'].get('snp1'))
+                elif(i == 1):
+                    rs_array1.append(het_hom_dict['hom_alt'].get('snp2'))
+                else:
+                    rs_array2.append(het_hom_dict['hom_alt'].get('snp3'))
+            elif (gt_hom_ref[i][k] == True):
+                if(i == 0):
+                    rs_array0.append(het_hom_dict['hom_ref'].get('snp1'))
+                elif(i == 1):
+                    rs_array1.append(het_hom_dict['hom_ref'].get('snp2'))
+                else:
+                    rs_array2.append(het_hom_dict['hom_ref'].get('snp3'))
+            else:
+                if(i == 0):
+                    rs_array0.append(het_hom_dict['het'].get('snp1'))
+                elif(i == 1):
+                    rs_array1.append(het_hom_dict['het'].get('snp2'))
+                else:
+                    rs_array2.append(het_hom_dict['het'].get('snp3'))
+                    
+    
+    return rs_array0, rs_array1, rs_array2
