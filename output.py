@@ -1,9 +1,10 @@
 '''
 @read_me:
-    creates a .txt file by zipping all desired arrays together 
+    creates an output file by zipping all desired arrays together
+    specify your file type when running main.py
 '''
 
-def create_txt_output(samples, rs_array0, rs_array1, rs_array2, blood_group_array, output_path):
+def create_output(samples, rs_array0, rs_array1, rs_array2, blood_group_array, output_path):
 
     with open(output_path,'w') as table:
         for row in zip(samples, rs_array0, rs_array1, rs_array2, blood_group_array):
@@ -11,4 +12,4 @@ def create_txt_output(samples, rs_array0, rs_array1, rs_array2, blood_group_arra
                 table.write(str(cell) + '\t')
             table.write('\n')
 
-    print(".txt containing blood types of all samples is in the same directory as your vcf")
+    print("The output file containing blood types of all samples is in the same directory as your .vcf")

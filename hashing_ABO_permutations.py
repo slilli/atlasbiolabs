@@ -2,13 +2,18 @@ import numpy as np
 
 '''
 @read_me:
-   - this script defines two dictionaries: ABO blood group permutattions and a dictionary for genotypes as well as two functions to access
+   - two dictionaries: ABO blood group permutations and a dictionary for genotypes as well as two functions to access
      those dictionaries
 '''
 
 
 def dictionary():
 
+    """
+    Nested dictionary with key-{key1:value1,....,key4-value4} pairs, where if the first 3 values match the 3 snps from our vcf file, the 4th value
+    corresponds to the resulting bloodtype
+    """
+    
     abo_bloodtype_dict = {
     '0': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type O'},
     '1': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type O'},
@@ -44,15 +49,23 @@ def dictionary():
 
 def hash_abo_permutations(dict_obj, blood_gr, rs_array0, rs_array1, rs_array2):
 
+    """
+    Check wether the genotype from our sampls are matching one of the key-value pairs from the dictionary
+    """
     for k in (np.arange(0, len(rs_array0),1)):
         for i in dict_obj:
             if (rs_array0[k] == dict_obj[i].get('snp1')) and (rs_array1[k] == dict_obj[i].get('snp2')) and (rs_array2[k] == dict_obj[i].get('snp3')) :
                 blood_gr.append(dict_obj[i].get('Blood Type'))
+            
     
     return blood_gr, rs_array0, rs_array1, rs_array2
 
 
 def is_het_or_hom_dict():
+
+    """
+    Dictionary for heterozygus/homozygous genotype
+    """
 
     het_hom_dict = {
     'hom_alt': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)'},
@@ -63,6 +76,10 @@ def is_het_or_hom_dict():
 
 
 def is_het_or_hom(het_hom_dict, num_gt_subset, len_gt_subset, gt_hom_alt, gt_hom_ref, gt_het, rs_array0, rs_array1, rs_array2):
+    
+    """
+    Check if genotype is heterozygous/homozygous alternate/homozygous reference. Access dictionary at corresponding position
+    """
     
     for i in num_gt_subset:
         for k in len_gt_subset:

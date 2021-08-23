@@ -14,20 +14,27 @@ import pandas as pd
 import hashing_ABO_permutations as h
 import output as out
 import filter_relevant_snps as snp
+import matplotlib.pyplot as plt
 # ----------------------------------------------------------
 
 '''
 @read_me:
-    - This is a Python script to compute bloodtypes from .vcf files.
-    - hashing_ABO_permutations.py: dictionary for ABO permutations and genotypes (homozygous alternate/reference or heterozygous)
+
+    - hashing_ABO_permutations.py: dictionary for ABO permutations (A/B/AB/0) and genotypes (homozygous alternate/reference or heterozygous)
     - output.py: script to create .txt output, including samples, genotypes and bloodtypes
-    - filter_relevant_snps.py: Class
+    - filter_relevant_snps.py: @here: 'rs8176719', 'rs8176746', 'rs8176747'
 	- .vcf must be in the same directory as this python script
-	- .txt is created in the same directory as this python script
+	- output file is created in the same directory as this python script
 '''
 
 
 def main(id_vcf, gt_vcf, samples_vcf, output_path):
+
+
+    """
+    This function filters out snps, computes each samples genotype associated bloodtype
+    Finally, an output file is created containing interrelated sample_id, genotypes for all 3 relevant snps and the resulting blood type
+    """
 
 
     # filter relevant snps
@@ -46,9 +53,8 @@ def main(id_vcf, gt_vcf, samples_vcf, output_path):
 
 
     # cretate txt output
-    out.create_txt_output(samples_vcf, x.gt_0, x.gt_1, x.gt_2, x.blood_group, output_path)
-
-
+    out.create_output(samples_vcf, x.gt_0, x.gt_1, x.gt_2, x.blood_group, output_path)
+   
 
 if __name__ == "__main__":
 
@@ -58,7 +64,7 @@ if __name__ == "__main__":
 		if not len(sys.argv) == 3:
 			raise ValueError("error")
 	except(ValueError, IndexError):
-		exit("\033[1m" + "2 Arguments needed: Your input should look like: [(...).py] [input_vcf] [output.txt]")
+		exit("\033[1m" + "2 Arguments needed: Your input should look like: [(...).py] [input_vcf] [output.file]")
 
 
 	try:
@@ -68,7 +74,7 @@ if __name__ == "__main__":
 		exit("Couldn't open vcf")
 
 
-	# @param --------------------------------------
+	# @param from .vcf----------------------
 	callset = allel.read_vcf(sys.argv[1])
 	id_from_vcf = callset['variants/ID']
 	gt_from_vcf = callset['calldata/GT']
@@ -77,4 +83,5 @@ if __name__ == "__main__":
 
 	# calling functions ----------------------------
 	main(id_from_vcf, gt_from_vcf, samples_from_vcf, output_path)
+    
 
