@@ -15,49 +15,86 @@ def dictionary():
     """
     
     abo_bloodtype_dict = {
-    '0': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type O'},
-    '1': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type O'},
-    '2': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'Type O'},
-    '3': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type O'},
-    '4': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type O'},
-    '5': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'Type O'},
-    '6': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type O'},
-    '7': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type O'},
-    '8': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'Type O'},
-    '9': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'not clear'},
-    '10': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'not clear'},
-    '11': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'not clear'},
-    '12': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'not clear'},
-    '13': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'not clear'},
-    '14': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'not clear'},
-    '15': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type B likely, Type A possible'},
-    '16': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'Type A'},
-    '17': {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type B'},
-    '18': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'not clear'},
-    '19': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'not clear'},
-    '20': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'not clear'},
-    '21': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'not clear'},
-    '22': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'not clear'},
-    '23': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'not clear'},
-    '24': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)', 'Blood Type' : 'Type A'},
-    '25': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)', 'Blood Type' : 'Type AB'},
-    '26': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)', 'Blood Type' : 'Type B'}}
+    'rs8176719(D;D)':{
+        'rs8176746(A;A)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'Type O'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'Type O'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'Type O'}},
+        'rs8176746(A;C)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'Type O'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'Type O'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'Type O'}},
+        'rs8176746(C;C)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'Type O'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'Type O'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'Type O'}}},
+    'rs8176719(D;I)':{
+        'rs8176746(A;A)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'Type B'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'not clear'}},
+        'rs8176746(A;C)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'Type B likely, Type A possible'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'not clear'}},
+        'rs8176746(C;C)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'Type A'}}},
+    'rs8176719(I;I)':{
+        'rs8176746(A;A)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'Type B'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'not clear'}},
+        'rs8176746(A;C)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'Type AB'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'not clear'}},
+        'rs8176746(C;C)':{
+            'rs8176747(C;C)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(C;G)':{
+                'Blood Type' : 'not clear'},
+            'rs8176747(G;G)':{
+                'Blood Type' : 'Type A'}}}}
     
     
     return abo_bloodtype_dict
 
 
-def hash_abo_permutations(dict_obj, blood_gr, rs_array0, rs_array1, rs_array2):
+def hash_abo_permutations(bloodtype_dict, blood_gr, rs_array0, rs_array1, rs_array2):
 
     """
     Check wether the genotype from our sampls are matching one of the key-value pairs from the dictionary
     """
-    for k in (np.arange(0, len(rs_array0),1)):
-        for i in dict_obj:
-            if (rs_array0[k] == dict_obj[i].get('snp1')) and (rs_array1[k] == dict_obj[i].get('snp2')) and (rs_array2[k] == dict_obj[i].get('snp3')) :
-                blood_gr.append(dict_obj[i].get('Blood Type'))
-            
     
+    for k in (np.arange(0, len(rs_array0),1)):
+        blood_gr.append(bloodtype_dict[rs_array0[k]][rs_array1[k]][rs_array2[k]]['Blood Type'])
+            
     return blood_gr, rs_array0, rs_array1, rs_array2
 
 
@@ -68,9 +105,19 @@ def is_het_or_hom_dict():
     """
 
     het_hom_dict = {
-    'hom_alt': {'snp1' : 'rs8176719(I;I)', 'snp2' : 'rs8176746(C;C)', 'snp3' : 'rs8176747(G;G)'},
-    'hom_ref': {'snp1' : 'rs8176719(D;D)', 'snp2' : 'rs8176746(A;A)', 'snp3' : 'rs8176747(C;C)'},
-    'het' : {'snp1' : 'rs8176719(D;I)', 'snp2' : 'rs8176746(A;C)', 'snp3' : 'rs8176747(C;G)'}}
+    0:{
+        'hom_alt':{'snp' : 'rs8176719(I;I)'},
+        'hom_ref': {'snp' : 'rs8176719(D;D)'},
+        'het' : {'snp' : 'rs8176719(D;I)'}},
+    1:{
+        'hom_alt':{'snp' : 'rs8176746(C;C)'},
+        'hom_ref':{'snp' : 'rs8176746(A;A)'},
+        'het':{'snp' : 'rs8176746(A;C)'}},
+    2:{
+        'hom_alt':{'snp' : 'rs8176747(G;G)'},
+        'hom_ref':{'snp' : 'rs8176747(C;C)'},
+        'het':{'snp' : 'rs8176747(C;G)'}}}
+
     
     return het_hom_dict
 
@@ -80,30 +127,18 @@ def is_het_or_hom(het_hom_dict, num_gt_subset, len_gt_subset, gt_hom_alt, gt_hom
     """
     Check if genotype is heterozygous/homozygous alternate/homozygous reference. Access dictionary at corresponding position
     """
+
+    arrays = [rs_array0, rs_array1, rs_array2]
+    
     
     for i in num_gt_subset:
         for k in len_gt_subset:
-            if (gt_hom_alt[i][k] == True):
-                if(i == 0):            
-                    rs_array0.append(het_hom_dict['hom_alt'].get('snp1'))
-                elif(i == 1):
-                    rs_array1.append(het_hom_dict['hom_alt'].get('snp2'))
-                else:
-                    rs_array2.append(het_hom_dict['hom_alt'].get('snp3'))
+            if (gt_hom_alt[i][k] == True):           
+                arrays[i].append(het_hom_dict[i]['hom_alt']['snp'])
             elif (gt_hom_ref[i][k] == True):
-                if(i == 0):
-                    rs_array0.append(het_hom_dict['hom_ref'].get('snp1'))
-                elif(i == 1):
-                    rs_array1.append(het_hom_dict['hom_ref'].get('snp2'))
-                else:
-                    rs_array2.append(het_hom_dict['hom_ref'].get('snp3'))
+                arrays[i].append(het_hom_dict[i]['hom_ref']['snp'])
             else:
-                if(i == 0):
-                    rs_array0.append(het_hom_dict['het'].get('snp1'))
-                elif(i == 1):
-                    rs_array1.append(het_hom_dict['het'].get('snp2'))
-                else:
-                    rs_array2.append(het_hom_dict['het'].get('snp3'))
+                arrays[i].append(het_hom_dict[i]['het']['snp'])
                     
-    
-    return rs_array0, rs_array1, rs_array2
+
+    return arrays[0], arrays[1], arrays[2]

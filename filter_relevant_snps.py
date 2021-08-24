@@ -3,7 +3,7 @@ import numpy as np
 
 '''
 @read_me:
-    Class for initialisation
+    Class for storing attributes
 '''
 
 
