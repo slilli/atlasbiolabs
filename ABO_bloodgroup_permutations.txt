@@ -1,0 +1,27 @@
+rs8176719(D;D)  rs8176746(A;A)  rs8176747(B;B)  Type O
+rs8176719(D;D)  rs8176746(A;A)  rs8176747(B;D)  Type O
+rs8176719(D;D)  rs8176746(A;A)  rs8176747(D;D)  Type O
+rs8176719(D;D)  rs8176746(A;C)  rs8176747(B;B)  Type O
+rs8176719(D;D)  rs8176746(A;C)  rs8176747(B;D)  Type O
+rs8176719(D;D)  rs8176746(A;C)  rs8176747(D;D)  Type O
+rs8176719(D;D)  rs8176746(C;C)  rs8176747(B;B)  Type O
+rs8176719(D;D)  rs8176746(C;C)  rs8176747(B;D)  Type O
+rs8176719(D;D)  rs8176746(C;C)  rs8176747(D;D)  Type O
+rs8176719(D;I)  rs8176746(A;A)  rs8176747(B;B)  Type B
+rs8176719(D;I)  rs8176746(A;A)  rs8176747(B;D)  not clear
+rs8176719(D;I)  rs8176746(A;A)  rs8176747(D;D)  not clear
+rs8176719(D;I)  rs8176746(A;C)  rs8176747(B;B)  not clear
+rs8176719(D;I)  rs8176746(A;C)  rs8176747(B;D)  Type B likely, Type A possible
+rs8176719(D;I)  rs8176746(A;C)  rs8176747(D;D)  not clear
+rs8176719(D;I)  rs8176746(C;C)  rs8176747(B;B)  not clear
+rs8176719(D;I)  rs8176746(C;C)  rs8176747(B;D)  not clear
+rs8176719(D;I)  rs8176746(C;C)  rs8176747(D;D)  Type A
+rs8176719(I;I)  rs8176746(A;A)  rs8176747(B;B)  Type B
+rs8176719(I;I)  rs8176746(A;A)  rs8176747(B;D)  not clear
+rs8176719(I;I)  rs8176746(A;A)  rs8176747(D;D)  not clear
+rs8176719(I;I)  rs8176746(A;C)  rs8176747(B;B)  not clear
+rs8176719(I;I)  rs8176746(A;C)  rs8176747(B;D)  Type AB
+rs8176719(I;I)  rs8176746(A;C)  rs8176747(D;D)  not clear
+rs8176719(i;I)  rs8176746(C;C)  rs8176747(B;B)  not clear
+rs8176719(I;I)  rs8176746(C;C)  rs8176747(B;D)  not clear
+rs8176719(I;I)  rs8176746(C;C)  rs8176747(D;D)  Type A
