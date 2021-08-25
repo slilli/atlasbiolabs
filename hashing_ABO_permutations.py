@@ -14,6 +14,32 @@ def dictionary():
     corresponds to the resulting bloodtype
     """
     
+    f = open('ABO_bloodgroup_permutations.txt')
+
+    # Create empty dictionary 
+    abo_bloodtype_dict = {}
+
+    for line in f:
+        x = line.rstrip().split("  ")
+        if not x[0] in abo_bloodtype_dict:
+            abo_bloodtype_dict[x[0]] = {x[1] : {x[2] : x[3]}}
+        else:
+            if not x[1] in abo_bloodtype_dict[x[0]]:
+                abo_bloodtype_dict[x[0]][x[1]] = {}
+                abo_bloodtype_dict[x[0]][x[1]][x[2]] = x[3]
+            else:
+                abo_bloodtype_dict[x[0]][x[1]][x[2]] = x[3]
+    
+    return abo_bloodtype_dict
+
+'''
+def dictionary():
+
+    """
+    Nested dictionary with key-{key1:value1,....,key4-value4} pairs, where if the first 3 values match the 3 snps from our vcf file, the 4th value
+    corresponds to the resulting bloodtype
+    """
+    
     abo_bloodtype_dict = {
     'rs8176719(D;D)':{
         'rs8176746(A;A)':{
@@ -84,7 +110,7 @@ def dictionary():
     
     
     return abo_bloodtype_dict
-
+'''
 
 def hash_abo_permutations(bloodtype_dict, blood_gr, rs_array0, rs_array1, rs_array2):
 
@@ -93,7 +119,7 @@ def hash_abo_permutations(bloodtype_dict, blood_gr, rs_array0, rs_array1, rs_arr
     """
     
     for k in (np.arange(0, len(rs_array0),1)):
-        blood_gr.append(bloodtype_dict[rs_array0[k]][rs_array1[k]][rs_array2[k]]['Blood Type'])
+        blood_gr.append(bloodtype_dict[rs_array0[k]][rs_array1[k]][rs_array2[k]])
             
     return blood_gr, rs_array0, rs_array1, rs_array2
 
@@ -114,9 +140,9 @@ def is_het_or_hom_dict():
         'hom_ref':{'snp' : 'rs8176746(A;A)'},
         'het':{'snp' : 'rs8176746(A;C)'}},
     2:{
-        'hom_alt':{'snp' : 'rs8176747(G;G)'},
-        'hom_ref':{'snp' : 'rs8176747(C;C)'},
-        'het':{'snp' : 'rs8176747(C;G)'}}}
+        'hom_alt':{'snp' : 'rs8176747(D;D)'},
+        'hom_ref':{'snp' : 'rs8176747(B;B)'},
+        'het':{'snp' : 'rs8176747(B;D)'}}}
 
     
     return het_hom_dict
