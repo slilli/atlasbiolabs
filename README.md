@@ -1,5 +1,7 @@
 # atlasbiolabs
 
+@read_me in main.py
+
 Useful sites:
 
 https://www.biostars.org/p/42090/
