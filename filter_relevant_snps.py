@@ -54,7 +54,6 @@ class Snps:
     
         print("Check for snps 'rs8176719', 'rs8176746', 'rs8176747':", self.boolean_array)
     
-    
         try:
             for k in [0, len(self.boolean_array)-1]:
                 if self.boolean_array[k]  == False :

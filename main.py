@@ -19,12 +19,12 @@ import matplotlib.pyplot as plt
 
 '''
 @read_me:
-
     - hashing_ABO_permutations.py: dictionary for ABO permutations (A/B/AB/0) and genotypes (homozygous alternate/reference or heterozygous)
     - output.py: script to create .txt output, including samples, genotypes and bloodtypes
     - filter_relevant_snps.py: @here: 'rs8176719', 'rs8176746', 'rs8176747'
 	- .vcf must be in the same directory as this python script
 	- output file is created in the same directory as this python script
+    - we assume,that snps in vcf files are on the forward strand, otherwise conversion is necessary
 '''
 
 

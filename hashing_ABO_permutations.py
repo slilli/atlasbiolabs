@@ -19,6 +19,7 @@ def dictionary():
     # Create empty dictionary 
     abo_bloodtype_dict = {}
 
+    # fill dictionary from .txt 
     for line in f:
         x = line.rstrip().split("  ")
         if not x[0] in abo_bloodtype_dict:
@@ -32,85 +33,6 @@ def dictionary():
     
     return abo_bloodtype_dict
 
-'''
-def dictionary():
-
-    """
-    Nested dictionary with key-{key1:value1,....,key4-value4} pairs, where if the first 3 values match the 3 snps from our vcf file, the 4th value
-    corresponds to the resulting bloodtype
-    """
-    
-    abo_bloodtype_dict = {
-    'rs8176719(D;D)':{
-        'rs8176746(A;A)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'Type O'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'Type O'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'Type O'}},
-        'rs8176746(A;C)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'Type O'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'Type O'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'Type O'}},
-        'rs8176746(C;C)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'Type O'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'Type O'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'Type O'}}},
-    'rs8176719(D;I)':{
-        'rs8176746(A;A)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'Type B'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'not clear'}},
-        'rs8176746(A;C)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'Type B likely, Type A possible'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'not clear'}},
-        'rs8176746(C;C)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'Type A'}}},
-    'rs8176719(I;I)':{
-        'rs8176746(A;A)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'Type B'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'not clear'}},
-        'rs8176746(A;C)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'Type AB'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'not clear'}},
-        'rs8176746(C;C)':{
-            'rs8176747(C;C)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(C;G)':{
-                'Blood Type' : 'not clear'},
-            'rs8176747(G;G)':{
-                'Blood Type' : 'Type A'}}}}
-    
-    
-    return abo_bloodtype_dict
-'''
 
 def hash_abo_permutations(bloodtype_dict, blood_gr, rs_array0, rs_array1, rs_array2):
 
